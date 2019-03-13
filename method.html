@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v:on == @ -->
+    <button type="button" @click="add">더하기</button>
+    {{ counter }}
+    <input text="text" @keyup.enter="keyUp">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // 메소드안에서는 화살표 함수 사용x => this사용 불가능
+    let app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          counter: 0
+        }
+      },
+      methods: {
+        add() {
+          this.counter ++;
+          console.log(this.counter);
+        },
+        keyUp(ev){
+          if(ev.keyCode != 13){
+            console.log('엔터키 아님');
+            return;
+          }
+          console.log('엔터키 눌림');
+        }
+      }
+    })
+  </script>
+</body>
+</html>

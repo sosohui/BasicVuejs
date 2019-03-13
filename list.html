@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul style="list-style: none;">
+      <template v-for="item in items">
+          <li>
+            <img :src="item.image">
+          </li>
+          <li>
+            {{ item.title }}
+          </li>
+      </template>
+
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          items : [
+            {
+              id: 1,
+              image:'file:///C:/Users/sososo/Desktop/TermProject/Image/joro.jpg',
+              title: '조로'
+            },
+            {
+              id: 2,
+              image:'file:///C:/Users/sososo/Desktop/TermProject/Image/hijikata.jpg',
+              title: '히지카타'
+            },
+            {
+              id: 3,
+              image:'file:///C:/Users/sososo/Desktop/TermProject/Image/row.jpg',
+              title: '로우'
+            },
+            {
+              id: 4,
+              image:'file:///C:/Users/sososo/Desktop/TermProject/Image/saitama.jpg',
+              title: '사이타마'
+            },
+            {
+              id: 5,
+              image:'file:///C:/Users/sososo/Desktop/TermProject/Image/kagari.jpg',
+              title: '카가리'
+            }
+          ]
+        }
+      }
+    })
+  </script>
+</body>
+</html>
